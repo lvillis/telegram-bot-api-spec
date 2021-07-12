@@ -47,9 +47,6 @@
     "setWebhook": {
       "name": "setWebhook",
       "href": "https://core.telegram.org/bots/api#setwebhook",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to specify a url and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified url, containing a JSON-serialized Update. In case of an unsuccessful request, we will give up after a reasonable amount of attempts. Returns True on success.",
         "If you'd like to make sure that the Webhook request comes from Telegram, we recommend using a secret path in the URL, e.g. https://www.example.com/<token>. Since nobody else knows your bot's token, you can be pretty sure it's us."
@@ -108,9 +105,6 @@
     "deleteWebhook": {
       "name": "deleteWebhook",
       "href": "https://core.telegram.org/bots/api#deletewebhook",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on success."
       ],
@@ -138,9 +132,6 @@
     "getMe": {
       "name": "getMe",
       "href": "https://core.telegram.org/bots/api#getme",
-      "returns": [
-        "User"
-      ],
       "description": [
         "A simple method for testing your bot's auth token. Requires no parameters. Returns basic information about the bot in form of a User object."
       ]
@@ -148,9 +139,6 @@
     "logOut": {
       "name": "logOut",
       "href": "https://core.telegram.org/bots/api#logout",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to log out from the cloud Bot API server before launching the bot locally. You must log out the bot before running it locally, otherwise there is no guarantee that the bot will receive updates. After a successful call, you can immediately log in on a local server, but will not be able to log in back to the cloud Bot API server for 10 minutes. Returns True on success. Requires no parameters."
       ]
@@ -158,9 +146,6 @@
     "close": {
       "name": "close",
       "href": "https://core.telegram.org/bots/api#close",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters."
       ]
@@ -302,9 +287,6 @@
     "copyMessage": {
       "name": "copyMessage",
       "href": "https://core.telegram.org/bots/api#copymessage",
-      "returns": [
-        "MessageId"
-      ],
       "description": [
         "Use this method to copy messages of any kind. Service messages and invoice messages can't be copied. The method is analogous to the method forwardMessage, but the copied message doesn't have a link to the original message. Returns the MessageId of the sent message on success."
       ],
@@ -1872,9 +1854,6 @@
     "sendChatAction": {
       "name": "sendChatAction",
       "href": "https://core.telegram.org/bots/api#sendchataction",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns True on success.",
         "We only recommend using this method when a response from the bot will take a noticeable amount of time to arrive."
@@ -1902,9 +1881,6 @@
     "getUserProfilePhotos": {
       "name": "getUserProfilePhotos",
       "href": "https://core.telegram.org/bots/api#getuserprofilephotos",
-      "returns": [
-        "UserProfilePhotos"
-      ],
       "description": [
         "Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object."
       ],
@@ -1959,9 +1935,6 @@
     "banChatMember": {
       "name": "banChatMember",
       "href": "https://core.telegram.org/bots/api#banchatmember",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
       ],
@@ -2004,9 +1977,6 @@
     "unbanChatMember": {
       "name": "unbanChatMember",
       "href": "https://core.telegram.org/bots/api#unbanchatmember",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to unban a previously banned user in a supergroup or channel. The user will not return to the group or channel automatically, but will be able to join via link, etc. The bot must be an administrator for this to work. By default, this method guarantees that after the call the user is not a member of the chat, but will be able to join it. So if the user is a member of the chat they will also be removed from the chat. If you don't want this, use the parameter only_if_banned. Returns True on success."
       ],
@@ -2041,9 +2011,6 @@
     "restrictChatMember": {
       "name": "restrictChatMember",
       "href": "https://core.telegram.org/bots/api#restrictchatmember",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a user. Returns True on success."
       ],
@@ -2086,9 +2053,6 @@
     "promoteChatMember": {
       "name": "promoteChatMember",
       "href": "https://core.telegram.org/bots/api#promotechatmember",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. Returns True on success."
       ],
@@ -2203,9 +2167,6 @@
     "setChatAdministratorCustomTitle": {
       "name": "setChatAdministratorCustomTitle",
       "href": "https://core.telegram.org/bots/api#setchatadministratorcustomtitle",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to set a custom title for an administrator in a supergroup promoted by the bot. Returns True on success."
       ],
@@ -2240,9 +2201,6 @@
     "setChatPermissions": {
       "name": "setChatPermissions",
       "href": "https://core.telegram.org/bots/api#setchatpermissions",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members admin rights. Returns True on success."
       ],
@@ -2269,9 +2227,6 @@
     "exportChatInviteLink": {
       "name": "exportChatInviteLink",
       "href": "https://core.telegram.org/bots/api#exportchatinvitelink",
-      "returns": [
-        "String"
-      ],
       "description": [
         "Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success."
       ],
@@ -2290,9 +2245,6 @@
     "createChatInviteLink": {
       "name": "createChatInviteLink",
       "href": "https://core.telegram.org/bots/api#createchatinvitelink",
-      "returns": [
-        "ChatInviteLink"
-      ],
       "description": [
         "Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object."
       ],
@@ -2327,9 +2279,6 @@
     "editChatInviteLink": {
       "name": "editChatInviteLink",
       "href": "https://core.telegram.org/bots/api#editchatinvitelink",
-      "returns": [
-        "ChatInviteLink"
-      ],
       "description": [
         "Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object."
       ],
@@ -2372,9 +2321,6 @@
     "revokeChatInviteLink": {
       "name": "revokeChatInviteLink",
       "href": "https://core.telegram.org/bots/api#revokechatinvitelink",
-      "returns": [
-        "ChatInviteLink"
-      ],
       "description": [
         "Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the revoked invite link as ChatInviteLink object."
       ],
@@ -2401,9 +2347,6 @@
     "setChatPhoto": {
       "name": "setChatPhoto",
       "href": "https://core.telegram.org/bots/api#setchatphoto",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
       ],
@@ -2430,9 +2373,6 @@
     "deleteChatPhoto": {
       "name": "deleteChatPhoto",
       "href": "https://core.telegram.org/bots/api#deletechatphoto",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
       ],
@@ -2451,9 +2391,6 @@
     "setChatTitle": {
       "name": "setChatTitle",
       "href": "https://core.telegram.org/bots/api#setchattitle",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
       ],
@@ -2480,9 +2417,6 @@
     "setChatDescription": {
       "name": "setChatDescription",
       "href": "https://core.telegram.org/bots/api#setchatdescription",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
       ],
@@ -2509,9 +2443,6 @@
     "pinChatMessage": {
       "name": "pinChatMessage",
       "href": "https://core.telegram.org/bots/api#pinchatmessage",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
       ],
@@ -2546,9 +2477,6 @@
     "unpinChatMessage": {
       "name": "unpinChatMessage",
       "href": "https://core.telegram.org/bots/api#unpinchatmessage",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
       ],
@@ -2575,9 +2503,6 @@
     "unpinAllChatMessages": {
       "name": "unpinAllChatMessages",
       "href": "https://core.telegram.org/bots/api#unpinallchatmessages",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
       ],
@@ -2596,9 +2521,6 @@
     "leaveChat": {
       "name": "leaveChat",
       "href": "https://core.telegram.org/bots/api#leavechat",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method for your bot to leave a group, supergroup or channel. Returns True on success."
       ],
@@ -2617,9 +2539,6 @@
     "getChat": {
       "name": "getChat",
       "href": "https://core.telegram.org/bots/api#getchat",
-      "returns": [
-        "Chat"
-      ],
       "description": [
         "Use this method to get up to date information about the chat (current name of the user for one-on-one conversations, current username of a user, group or channel, etc.). Returns a Chat object on success."
       ],
@@ -2659,9 +2578,6 @@
     "getChatMemberCount": {
       "name": "getChatMemberCount",
       "href": "https://core.telegram.org/bots/api#getchatmembercount",
-      "returns": [
-        "Integer"
-      ],
       "description": [
         "Use this method to get the number of members in a chat. Returns Int on success."
       ],
@@ -2680,9 +2596,6 @@
     "getChatMember": {
       "name": "getChatMember",
       "href": "https://core.telegram.org/bots/api#getchatmember",
-      "returns": [
-        "ChatMember"
-      ],
       "description": [
         "Use this method to get information about a member of a chat. Returns a ChatMember object on success."
       ],
@@ -2709,9 +2622,6 @@
     "setChatStickerSet": {
       "name": "setChatStickerSet",
       "href": "https://core.telegram.org/bots/api#setchatstickerset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
       ],
@@ -2738,9 +2648,6 @@
     "deleteChatStickerSet": {
       "name": "deleteChatStickerSet",
       "href": "https://core.telegram.org/bots/api#deletechatstickerset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
       ],
@@ -2811,9 +2718,6 @@
     "setMyCommands": {
       "name": "setMyCommands",
       "href": "https://core.telegram.org/bots/api#setmycommands",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to change the list of the bot's commands. See https://core.telegram.org/bots#commands for more details about bot commands. Returns True on success."
       ],
@@ -2847,9 +2751,6 @@
     "deleteMyCommands": {
       "name": "deleteMyCommands",
       "href": "https://core.telegram.org/bots/api#deletemycommands",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to delete the list of the bot's commands for the given scope and user language. After deletion, higher level commands will be shown to affected users. Returns True on success."
       ],
@@ -2876,7 +2777,7 @@
       "name": "getMyCommands",
       "href": "https://core.telegram.org/bots/api#getmycommands",
       "returns": [
-        "Array of BotCommand"
+        "If"
       ],
       "description": [
         "Use this method to get the current list of the bot's commands for the given scope and user language. Returns Array of BotCommand on success. If commands aren't set, an empty list is returned."
@@ -3188,9 +3089,6 @@
     "deleteMessage": {
       "name": "deleteMessage",
       "href": "https://core.telegram.org/bots/api#deletemessage",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to delete a message, including service messages, with the following limitations:- A message can only be deleted if it was sent less than 48 hours ago.- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.- Bots can delete outgoing messages in private chats, groups, and supergroups.- Bots can delete incoming messages in private chats.- Bots granted can_post_messages permissions can delete outgoing messages in channels.- If the bot is an administrator of a group, it can delete any message there.- If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.Returns True on success."
       ],
@@ -3302,9 +3200,6 @@
     "uploadStickerFile": {
       "name": "uploadStickerFile",
       "href": "https://core.telegram.org/bots/api#uploadstickerfile",
-      "returns": [
-        "File"
-      ],
       "description": [
         "Use this method to upload a .PNG file with a sticker for later use in createNewStickerSet and addStickerToSet methods (can be used multiple times). Returns the uploaded File on success."
       ],
@@ -3330,9 +3225,6 @@
     "createNewStickerSet": {
       "name": "createNewStickerSet",
       "href": "https://core.telegram.org/bots/api#createnewstickerset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to create a new sticker set owned by a user. The bot will be able to edit the sticker set thus created. You must use exactly one of the fields png_sticker or tgs_sticker. Returns True on success."
       ],
@@ -3407,9 +3299,6 @@
     "addStickerToSet": {
       "name": "addStickerToSet",
       "href": "https://core.telegram.org/bots/api#addstickertoset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to add a new sticker to a set created by the bot. You must use exactly one of the fields png_sticker or tgs_sticker. Animated stickers can be added to animated sticker sets and only to them. Animated sticker sets can have up to 50 stickers. Static sticker sets can have up to 120 stickers. Returns True on success."
       ],
@@ -3468,9 +3357,6 @@
     "setStickerPositionInSet": {
       "name": "setStickerPositionInSet",
       "href": "https://core.telegram.org/bots/api#setstickerpositioninset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success."
       ],
@@ -3496,9 +3382,6 @@
     "deleteStickerFromSet": {
       "name": "deleteStickerFromSet",
       "href": "https://core.telegram.org/bots/api#deletestickerfromset",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to delete a sticker from a set created by the bot. Returns True on success."
       ],
@@ -3516,9 +3399,6 @@
     "setStickerSetThumb": {
       "name": "setStickerSetThumb",
       "href": "https://core.telegram.org/bots/api#setstickersetthumb",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Use this method to set the thumbnail of a sticker set. Animated thumbnails can be set for animated sticker sets only. Returns True on success."
       ],
@@ -3922,9 +3802,6 @@
     "setPassportDataErrors": {
       "name": "setPassportDataErrors",
       "href": "https://core.telegram.org/bots/api#setpassportdataerrors",
-      "returns": [
-        "Boolean"
-      ],
       "description": [
         "Informs a user that some of the Telegram Passport elements they provided contains errors. The user will not be able to re-submit their Passport to you until the errors are fixed (the contents of the field for which you returned the error must change). Returns True on success.",
         "Use this if the data submitted by the user doesn't satisfy the standards your service requires for any reason. For example, if a birthday date seems invalid, a submitted document is blurry, a scan shows evidence of tampering, etc. Supply some details in the error message to make sure the user knows how to correct the issues."
@@ -6866,7 +6743,7 @@
             "Integer"
           ],
           "required": true,
-          "description": "Date when restrictions will be lifted for this user; unix time"
+          "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is restricted forever"
         }
       ],
       "subtype_of": [
@@ -6930,7 +6807,7 @@
             "Integer"
           ],
           "required": true,
-          "description": "Date when restrictions will be lifted for this user; unix time"
+          "description": "Date when restrictions will be lifted for this user; unix time. If 0, then the user is banned forever"
         }
       ],
       "subtype_of": [
