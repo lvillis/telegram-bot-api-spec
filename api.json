@@ -133,7 +133,7 @@
       "name": "getMe",
       "href": "https://core.telegram.org/bots/api#getme",
       "description": [
-        "A simple method for testing your bot's auth token. Requires no parameters. Returns basic information about the bot in form of a User object."
+        "A simple method for testing your bot's authentication token. Requires no parameters. Returns basic information about the bot in form of a User object."
       ]
     },
     "logOut": {
@@ -3494,7 +3494,7 @@
             "String"
           ],
           "required": false,
-          "description": "Deep-linking parameter for the /start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a 'Connect your YouTube account' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an oauth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities."
+          "description": "Deep-linking parameter for the /start message sent to the bot when user presses the switch button. 1-64 characters, only A-Z, a-z, 0-9, _ and - are allowed.Example: An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a 'Connect your YouTube account' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a switch_inline button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities."
         }
       ]
     },
@@ -4384,7 +4384,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user. Returned only in getChat."
+          "description": "Optional. For supergroups, the minimum allowed delay between consecutive messages sent by each unpriviledged user; in seconds. Returned only in getChat."
         },
         {
           "name": "message_auto_delete_time",
@@ -5004,7 +5004,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5085,7 +5085,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5158,7 +5158,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         },
         {
           "name": "thumb",
@@ -5223,7 +5223,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5304,7 +5304,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5361,7 +5361,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5410,7 +5410,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -5696,7 +5696,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. Time relative to the message sending date, during which the location can be updated, in seconds. For active live locations only."
+          "description": "Optional. Time relative to the message sending date, during which the location can be updated; in seconds. For active live locations only."
         },
         {
           "name": "heading",
@@ -5827,7 +5827,7 @@
             "Integer"
           ],
           "required": true,
-          "description": "New auto-delete time for messages in the chat"
+          "description": "New auto-delete time for messages in the chat; in seconds"
         }
       ]
     },
@@ -5868,7 +5868,7 @@
             "Integer"
           ],
           "required": true,
-          "description": "Voice chat duration; in seconds"
+          "description": "Voice chat duration in seconds"
         }
       ]
     },
@@ -5943,7 +5943,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size, if known"
+          "description": "Optional. File size in bytes, if known"
         },
         {
           "name": "file_path",
@@ -7366,7 +7366,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. Video duration"
+          "description": "Optional. Video duration in seconds"
         },
         {
           "name": "supports_streaming",
@@ -7459,7 +7459,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. Animation duration"
+          "description": "Optional. Animation duration in seconds"
         }
       ],
       "subtype_of": [
@@ -7712,7 +7712,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. File size"
+          "description": "Optional. File size in bytes"
         }
       ]
     },
@@ -8050,7 +8050,7 @@
             "String"
           ],
           "required": true,
-          "description": "A valid URL of the photo. Photo must be in jpeg format. Photo size must not exceed 5MB"
+          "description": "A valid URL of the photo. Photo must be in JPEG format. Photo size must not exceed 5MB"
         },
         {
           "name": "thumb_url",
@@ -8190,7 +8190,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. Duration of the GIF"
+          "description": "Optional. Duration of the GIF in seconds"
         },
         {
           "name": "thumb_url",
@@ -8314,7 +8314,7 @@
             "Integer"
           ],
           "required": false,
-          "description": "Optional. Video duration"
+          "description": "Optional. Video duration in seconds"
         },
         {
           "name": "thumb_url",
@@ -8430,7 +8430,7 @@
             "String"
           ],
           "required": true,
-          "description": "URL of the thumbnail (jpeg only) for the video"
+          "description": "URL of the thumbnail (JPEG only) for the video"
         },
         {
           "name": "title",
@@ -8813,7 +8813,7 @@
             "String"
           ],
           "required": false,
-          "description": "Optional. URL of the thumbnail (jpeg only) for the file"
+          "description": "Optional. URL of the thumbnail (JPEG only) for the file"
         },
         {
           "name": "thumb_width",
@@ -10795,7 +10795,7 @@
             "Integer"
           ],
           "required": true,
-          "description": "File size"
+          "description": "File size in bytes"
         },
         {
           "name": "file_date",
