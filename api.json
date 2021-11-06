@@ -1874,7 +1874,7 @@
             "String"
           ],
           "required": true,
-          "description": "Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages, upload_photo for photos, record_video or upload_video for videos, record_voice or upload_voice for voice notes, upload_document for general files, find_location for location data, record_video_note or upload_video_note for video notes."
+          "description": "Type of action to broadcast. Choose one, depending on what the user is about to receive: typing for text messages, upload_photo for photos, record_video or upload_video for videos, record_voice or upload_voice for voice notes, upload_document for general files, choose_sticker for stickers, find_location for location data, record_video_note or upload_video_note for video notes."
         }
       ]
     },
@@ -1936,7 +1936,7 @@
       "name": "banChatMember",
       "href": "https://core.telegram.org/bots/api#banchatmember",
       "description": [
-        "Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
+        "Use this method to ban a user in a group, a supergroup or a channel. In the case of supergroups and channels, the user will not be able to return to the chat on their own using invite links, etc., unless unbanned first. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2012,7 +2012,7 @@
       "name": "restrictChatMember",
       "href": "https://core.telegram.org/bots/api#restrictchatmember",
       "description": [
-        "Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate admin rights. Pass True for all permissions to lift restrictions from a user. Returns True on success."
+        "Use this method to restrict a user in a supergroup. The bot must be an administrator in the supergroup for this to work and must have the appropriate administrator rights. Pass True for all permissions to lift restrictions from a user. Returns True on success."
       ],
       "fields": [
         {
@@ -2054,7 +2054,7 @@
       "name": "promoteChatMember",
       "href": "https://core.telegram.org/bots/api#promotechatmember",
       "description": [
-        "Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Pass False for all boolean parameters to demote a user. Returns True on success."
+        "Use this method to promote or demote a user in a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Pass False for all boolean parameters to demote a user. Returns True on success."
       ],
       "fields": [
         {
@@ -2202,7 +2202,7 @@
       "name": "setChatPermissions",
       "href": "https://core.telegram.org/bots/api#setchatpermissions",
       "description": [
-        "Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members admin rights. Returns True on success."
+        "Use this method to set default chat permissions for all members. The bot must be an administrator in the group or a supergroup for this to work and must have the can_restrict_members administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2228,7 +2228,7 @@
       "name": "exportChatInviteLink",
       "href": "https://core.telegram.org/bots/api#exportchatinvitelink",
       "description": [
-        "Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the new invite link as String on success."
+        "Use this method to generate a new primary invite link for a chat; any previously generated primary link is revoked. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the new invite link as String on success."
       ],
       "fields": [
         {
@@ -2246,7 +2246,7 @@
       "name": "createChatInviteLink",
       "href": "https://core.telegram.org/bots/api#createchatinvitelink",
       "description": [
-        "Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object."
+        "Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object."
       ],
       "fields": [
         {
@@ -2257,6 +2257,14 @@
           ],
           "required": true,
           "description": "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+        },
+        {
+          "name": "name",
+          "types": [
+            "String"
+          ],
+          "required": false,
+          "description": "Invite link name; 0-32 characters"
         },
         {
           "name": "expire_date",
@@ -2273,6 +2281,14 @@
           ],
           "required": false,
           "description": "Maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999"
+        },
+        {
+          "name": "creates_join_request",
+          "types": [
+            "Boolean"
+          ],
+          "required": false,
+          "description": "True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified"
         }
       ]
     },
@@ -2280,7 +2296,7 @@
       "name": "editChatInviteLink",
       "href": "https://core.telegram.org/bots/api#editchatinvitelink",
       "description": [
-        "Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the edited invite link as a ChatInviteLink object."
+        "Use this method to edit a non-primary invite link created by the bot. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the edited invite link as a ChatInviteLink object."
       ],
       "fields": [
         {
@@ -2301,6 +2317,14 @@
           "description": "The invite link to edit"
         },
         {
+          "name": "name",
+          "types": [
+            "String"
+          ],
+          "required": false,
+          "description": "Invite link name; 0-32 characters"
+        },
+        {
           "name": "expire_date",
           "types": [
             "Integer"
@@ -2315,6 +2339,14 @@
           ],
           "required": false,
           "description": "Maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999"
+        },
+        {
+          "name": "creates_join_request",
+          "types": [
+            "Boolean"
+          ],
+          "required": false,
+          "description": "True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified"
         }
       ]
     },
@@ -2322,7 +2354,7 @@
       "name": "revokeChatInviteLink",
       "href": "https://core.telegram.org/bots/api#revokechatinvitelink",
       "description": [
-        "Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns the revoked invite link as ChatInviteLink object."
+        "Use this method to revoke an invite link created by the bot. If the primary link is revoked, a new link is automatically generated. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns the revoked invite link as ChatInviteLink object."
       ],
       "fields": [
         {
@@ -2344,11 +2376,63 @@
         }
       ]
     },
+    "approveChatJoinRequest": {
+      "name": "approveChatJoinRequest",
+      "href": "https://core.telegram.org/bots/api#approvechatjoinrequest",
+      "description": [
+        "Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success."
+      ],
+      "fields": [
+        {
+          "name": "chat_id",
+          "types": [
+            "Integer",
+            "String"
+          ],
+          "required": true,
+          "description": "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+        },
+        {
+          "name": "user_id",
+          "types": [
+            "Integer"
+          ],
+          "required": true,
+          "description": "Unique identifier of the target user"
+        }
+      ]
+    },
+    "declineChatJoinRequest": {
+      "name": "declineChatJoinRequest",
+      "href": "https://core.telegram.org/bots/api#declinechatjoinrequest",
+      "description": [
+        "Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success."
+      ],
+      "fields": [
+        {
+          "name": "chat_id",
+          "types": [
+            "Integer",
+            "String"
+          ],
+          "required": true,
+          "description": "Unique identifier for the target chat or username of the target channel (in the format @channelusername)"
+        },
+        {
+          "name": "user_id",
+          "types": [
+            "Integer"
+          ],
+          "required": true,
+          "description": "Unique identifier of the target user"
+        }
+      ]
+    },
     "setChatPhoto": {
       "name": "setChatPhoto",
       "href": "https://core.telegram.org/bots/api#setchatphoto",
       "description": [
-        "Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
+        "Use this method to set a new profile photo for the chat. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2374,7 +2458,7 @@
       "name": "deleteChatPhoto",
       "href": "https://core.telegram.org/bots/api#deletechatphoto",
       "description": [
-        "Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
+        "Use this method to delete a chat photo. Photos can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2392,7 +2476,7 @@
       "name": "setChatTitle",
       "href": "https://core.telegram.org/bots/api#setchattitle",
       "description": [
-        "Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
+        "Use this method to change the title of a chat. Titles can't be changed for private chats. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2418,7 +2502,7 @@
       "name": "setChatDescription",
       "href": "https://core.telegram.org/bots/api#setchatdescription",
       "description": [
-        "Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Returns True on success."
+        "Use this method to change the description of a group, a supergroup or a channel. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Returns True on success."
       ],
       "fields": [
         {
@@ -2444,7 +2528,7 @@
       "name": "pinChatMessage",
       "href": "https://core.telegram.org/bots/api#pinchatmessage",
       "description": [
-        "Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
+        "Use this method to add a message to the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel. Returns True on success."
       ],
       "fields": [
         {
@@ -2478,7 +2562,7 @@
       "name": "unpinChatMessage",
       "href": "https://core.telegram.org/bots/api#unpinchatmessage",
       "description": [
-        "Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
+        "Use this method to remove a message from the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel. Returns True on success."
       ],
       "fields": [
         {
@@ -2504,7 +2588,7 @@
       "name": "unpinAllChatMessages",
       "href": "https://core.telegram.org/bots/api#unpinallchatmessages",
       "description": [
-        "Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' admin right in a supergroup or 'can_edit_messages' admin right in a channel. Returns True on success."
+        "Use this method to clear the list of pinned messages in a chat. If the chat is not a private chat, the bot must be an administrator in the chat for this to work and must have the 'can_pin_messages' administrator right in a supergroup or 'can_edit_messages' administrator right in a channel. Returns True on success."
       ],
       "fields": [
         {
@@ -2623,7 +2707,7 @@
       "name": "setChatStickerSet",
       "href": "https://core.telegram.org/bots/api#setchatstickerset",
       "description": [
-        "Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
+        "Use this method to set a new group sticker set for a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
       ],
       "fields": [
         {
@@ -2649,7 +2733,7 @@
       "name": "deleteChatStickerSet",
       "href": "https://core.telegram.org/bots/api#deletechatstickerset",
       "description": [
-        "Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate admin rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
+        "Use this method to delete a group sticker set from a supergroup. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. Use the field can_set_sticker_set optionally returned in getChat requests to check if the bot can use this method. Returns True on success."
       ],
       "fields": [
         {
@@ -2695,7 +2779,7 @@
             "Boolean"
           ],
           "required": false,
-          "description": "If true, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false."
+          "description": "If True, an alert will be shown by the client instead of a notification at the top of the chat screen. Defaults to false."
         },
         {
           "name": "url",
@@ -4118,6 +4202,14 @@
           ],
           "required": false,
           "description": "Optional. A chat member's status was updated in a chat. The bot must be an administrator in the chat and must explicitly specify \"chat_member\" in the list of allowed_updates to receive these updates."
+        },
+        {
+          "name": "chat_join_request",
+          "types": [
+            "ChatJoinRequest"
+          ],
+          "required": false,
+          "description": "Optional. A request to join the chat has been sent. The bot must have the can_invite_users administrator right in the chat to receive these updates."
         }
       ]
     },
@@ -6384,6 +6476,14 @@
           "description": "Creator of the link"
         },
         {
+          "name": "creates_join_request",
+          "types": [
+            "Boolean"
+          ],
+          "required": true,
+          "description": "True, if users joining the chat via the link need to be approved by chat administrators"
+        },
+        {
           "name": "is_primary",
           "types": [
             "Boolean"
@@ -6400,6 +6500,14 @@
           "description": "True, if the link is revoked"
         },
         {
+          "name": "name",
+          "types": [
+            "String"
+          ],
+          "required": false,
+          "description": "Optional. Invite link name"
+        },
+        {
           "name": "expire_date",
           "types": [
             "Integer"
@@ -6414,6 +6522,14 @@
           ],
           "required": false,
           "description": "Optional. Maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999"
+        },
+        {
+          "name": "pending_join_request_count",
+          "types": [
+            "Integer"
+          ],
+          "required": false,
+          "description": "Optional. Number of pending join requests created using this link"
         }
       ]
     },
@@ -6868,6 +6984,55 @@
           ],
           "required": false,
           "description": "Optional. Chat invite link, which was used by the user to join the chat; for joining by invite link events only."
+        }
+      ]
+    },
+    "ChatJoinRequest": {
+      "name": "ChatJoinRequest",
+      "href": "https://core.telegram.org/bots/api#chatjoinrequest",
+      "description": [
+        "Represents a join request sent to a chat."
+      ],
+      "fields": [
+        {
+          "name": "chat",
+          "types": [
+            "Chat"
+          ],
+          "required": true,
+          "description": "Chat to which the request was sent"
+        },
+        {
+          "name": "from",
+          "types": [
+            "User"
+          ],
+          "required": true,
+          "description": "User that sent the join request"
+        },
+        {
+          "name": "date",
+          "types": [
+            "Integer"
+          ],
+          "required": true,
+          "description": "Date the request was sent in Unix time"
+        },
+        {
+          "name": "bio",
+          "types": [
+            "String"
+          ],
+          "required": false,
+          "description": "Optional. Bio of the user."
+        },
+        {
+          "name": "invite_link",
+          "types": [
+            "ChatInviteLink"
+          ],
+          "required": false,
+          "description": "Optional. Chat invite link that was used by the user to send the join request"
         }
       ]
     },
@@ -7613,7 +7778,7 @@
             "Boolean"
           ],
           "required": false,
-          "description": "Optional. Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always true, if the document is sent as part of an album."
+          "description": "Optional. Disables automatic server-side content type detection for files uploaded using multipart/form-data. Always True, if the document is sent as part of an album."
         }
       ],
       "subtype_of": [
