@@ -40,7 +40,7 @@
             "Array of String"
           ],
           "required": false,
-          "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\"message\", \"edited_channel_post\", \"callback_query\"] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created before the call to the getUpdates, so unwanted updates may be received for a short period of time."
+          "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\"message\", \"edited_channel_post\", \"callback_query\"] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the getUpdates, so unwanted updates may be received for a short period of time."
         }
       ]
     },
@@ -90,7 +90,7 @@
             "Array of String"
           ],
           "required": false,
-          "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\"message\", \"edited_channel_post\", \"callback_query\"] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used. Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time."
+          "description": "A JSON-serialized list of the update types you want your bot to receive. For example, specify [\"message\", \"edited_channel_post\", \"callback_query\"] to only receive updates of these types. See Update for a complete list of available update types. Specify an empty list to receive all update types except chat_member (default). If not specified, the previous setting will be used.Please note that this parameter doesn't affect updates created before the call to the setWebhook, so unwanted updates may be received for a short period of time."
         },
         {
           "name": "drop_pending_updates",
@@ -3354,23 +3354,7 @@
       "name": "deleteMessage",
       "href": "https://core.telegram.org/bots/api#deletemessage",
       "description": [
-        "Use this method to delete a message, including service messages, with the following limitations:",
-        "- A message can only be deleted if it was sent less than 48 hours ago.",
-        "- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.",
-        "- Bots can delete outgoing messages in private chats, groups, and supergroups.",
-        "- Bots can delete incoming messages in private chats.",
-        "- Bots granted can_post_messages permissions can delete outgoing messages in channels.",
-        "- If the bot is an administrator of a group, it can delete any message there.",
-        "- If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.\nReturns True on success."
-      ],
-      "subtypes": [
-        "A message can only be deleted if it was sent less than 48 hours ago.",
-        "A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.",
-        "Bots can delete outgoing messages in private chats, groups, and supergroups.",
-        "Bots can delete incoming messages in private chats.",
-        "Bots granted can_post_messages permissions can delete outgoing messages in channels.",
-        "If the bot is an administrator of a group, it can delete any message there.",
-        "If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.\nReturns True on success."
+        "Use this method to delete a message, including service messages, with the following limitations:- A message can only be deleted if it was sent less than 48 hours ago.- A dice message in a private chat can only be deleted if it was sent more than 24 hours ago.- Bots can delete outgoing messages in private chats, groups, and supergroups.- Bots can delete incoming messages in private chats.- Bots granted can_post_messages permissions can delete outgoing messages in channels.- If the bot is an administrator of a group, it can delete any message there.- If the bot has can_delete_messages permission in a supergroup or a channel, it can delete any message there.Returns True on success."
       ],
       "fields": [
         {
@@ -3531,7 +3515,7 @@
             "String"
           ],
           "required": true,
-          "description": "Short name of sticker set, to be used in t.me/addstickers/ URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in \"by<bot username>\". <bot_username> is case insensitive. 1-64 characters."
+          "description": "Short name of sticker set, to be used in t.me/addstickers/ URLs (e.g., animals). Can contain only english letters, digits and underscores. Must begin with a letter, can't contain consecutive underscores and must end in \"_by_<bot_username>\". <bot_username> is case insensitive. 1-64 characters."
         },
         {
           "name": "title",
@@ -3741,7 +3725,7 @@
         "Boolean"
       ],
       "description": [
-        "Use this method to send answers to an inline query. On success, True is returned.\nNo more than 50 results per query are allowed."
+        "Use this method to send answers to an inline query. On success, True is returned.No more than 50 results per query are allowed."
       ],
       "fields": [
         {
@@ -4324,7 +4308,7 @@
       "name": "Update",
       "href": "https://core.telegram.org/bots/api#update",
       "description": [
-        "This object represents an incoming update.\nAt most one of the optional parameters can be present in any given update."
+        "This object represents an incoming update.At most one of the optional parameters can be present in any given update."
       ],
       "fields": [
         {
@@ -6369,7 +6353,7 @@
       "href": "https://core.telegram.org/bots/api#keyboardbutton",
       "description": [
         "This object represents one button of the reply keyboard. For simple text buttons String can be used instead of this object to specify text of the button. Optional fields request_contact, request_location, and request_poll are mutually exclusive.",
-        "Note: request_contact and request_location options will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message.\nNote: request_poll option will only work in Telegram versions released after 23 January, 2020. Older clients will display unsupported message."
+        "Note: request_contact and request_location options will only work in Telegram versions released after 9 April, 2016. Older clients will display unsupported message.Note: request_poll option will only work in Telegram versions released after 23 January, 2020. Older clients will display unsupported message."
       ],
       "fields": [
         {
@@ -6511,7 +6495,7 @@
             "String"
           ],
           "required": false,
-          "description": "Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot's username and the specified inline query in the input field. Can be empty, in which case just the bot's username will be inserted.Note: This offers an easy way for users to start using your bot in inline mode when they are currently in a private chat with it. Especially useful when combined with switch_pm... actions \u2013 in this case the user will be automatically returned to the chat they switched from, skipping the chat selection screen."
+          "description": "Optional. If set, pressing the button will prompt the user to select one of their chats, open that chat and insert the bot's username and the specified inline query in the input field. Can be empty, in which case just the bot's username will be inserted.Note: This offers an easy way for users to start using your bot in inline mode when they are currently in a private chat with it. Especially useful when combined with switch_pm\u2026 actions \u2013 in this case the user will be automatically returned to the chat they switched from, skipping the chat selection screen."
         },
         {
           "name": "switch_inline_query_current_chat",
@@ -6733,7 +6717,7 @@
             "String"
           ],
           "required": true,
-          "description": "The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with \"...\"."
+          "description": "The invite link. If the link was created by another chat administrator, then the second part of the link will be replaced with \"\u2026\"."
         },
         {
           "name": "creator",
@@ -11878,7 +11862,7 @@
       "href": "https://core.telegram.org/bots/api#gamehighscore",
       "description": [
         "This object represents one row of the high scores table for a game.",
-        "And that's about all we've got for now.\nIf you've got any questions, please check out our Bot FAQ \u00bb"
+        "And that's about all we've got for now.If you've got any questions, please check out our Bot FAQ \u00bb"
       ],
       "fields": [
         {
